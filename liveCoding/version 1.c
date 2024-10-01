@@ -1,17 +1,4 @@
-// what is the update in this version 
-
-
-
-
-
-// case 1 : yes
-// case 2 : yes
-// case 3 : yes
-// case 4 : yes
-// case 5 : nO
-// case 6 : no
-// case 7 : no
-
+// Online C compiler to run C program online
 #include <stdio.h>
 #include <string.h>
 
@@ -21,6 +8,7 @@ int main() {
     float prix [100];
     int quantite[100];
     int choix,x;
+     int found;
     do{
 printf("Gestion de Stock dans une Librairie\n");
 
@@ -33,8 +21,8 @@ printf("Gestion de Stock dans une Librairie\n");
         printf("7. Quitter\n");
         printf("entrez votre choix :");
         scanf("%d", &choix);
-        
-        //*****************
+
+        //*******
         switch(choix)
         {
          case 1: printf("\nentrez le titer de livere %d:",x+1);
@@ -48,9 +36,9 @@ printf("Gestion de Stock dans une Librairie\n");
                    x++;
            break;
          case 2 :
-          int i;
-          for(i=0 ; i<x ; i++){
-              printf("********** \n");
+
+          for(int i=0 ; i<x ; i++){
+              printf("**** \n");
               printf("%s \n", titre[i]);
               printf("%s \n", auteur[i]);
               printf("%.2f \n", prix[i]);
@@ -59,12 +47,11 @@ printf("Gestion de Stock dans une Librairie\n");
           break;
          case 3 :
          char nomm[50];
-         int    newq;
-         int    found;
+         int newq;
          found = 0;
          printf("entrer le nom de livre à mis-jour");
          scanf("%s", &nomm);
-         for(i = 0; i < x; i ++)
+         for(int i = 0; i < x; i ++)
          {
              if(strcmp(nomm, titre[i]) == 0)
              {
@@ -77,16 +64,16 @@ printf("Gestion de Stock dans une Librairie\n");
          }
          if(found == 0)
          {
-         printf("\nlivre non trouvé\n");
+         printf("\n livre non trouvé\n");
          }
           break;
-          
-          case 4 : 
+
+          case 4 :
           char sup[50];
-          int found=0;
-          print("Entrer le titre de livre que vous voulez supprimer:\n");
+          found=0;
+          printf("Entrer le titre de livre que vous voulez supprimer:\n");
           scanf("%s", &sup[50]);
-          for(i = 0; i < x; i ++)
+          for(int i = 0; i < x; i ++)
          {
              if(strcmp(sup, titre[i]) == 0)
              {
@@ -99,19 +86,20 @@ printf("Gestion de Stock dans une Librairie\n");
                 printf("Le livre est supprime\n");
                 break;
              }
-       
+
          }
           if(!found){
               printf("Le titre non trouver\n");
           } break;
         }
+
     }while(choix!=7);
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
 
     return 0;
 }
